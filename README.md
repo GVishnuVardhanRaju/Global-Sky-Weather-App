@@ -1,18 +1,64 @@
-# Welcome to your Lovable project
+# Welcome to your global sky project
 
 ## Project info
+🌤 Global Sky Weather App
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+📌 Project Overview
+
+Global Sky Weather App is a modern web application that provides real-time weather information for cities around the world.
+It allows users to search any location and view weather conditions, forecasts, and environmental insights with an interactive and responsive interface.
+
+This project is built using React and modern web technologies to deliver a fast and user-friendly weather experience.
+
+🚀 Features
+
+- 🌍 Search weather for any city worldwide
+- ⛅ Real-time weather conditions
+- 📊 Weather analytics and insights
+- 🗺 Interactive weather visualization
+- 🌫 Air quality and environmental information
+- 📱 Fully responsive design for mobile and desktop
+
+🛠 Technologies Used
+
+- React.js
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Weather API
+
+💻 Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/GVishnuVardhanRaju/Global-Sky-Weather-App.git
+
+Navigate to the project folder:
+
+cd Global-Sky-Weather-App
+
+Install dependencies:
+
+npm install
+
+Run the application:
+
+npm run dev
+
+📈 Future Enhancements
+
+- Weather alerts and notifications
+- Advanced weather analytics
+- Multi-language support
+- User location detection
+
+👨‍💻 Author
+
+G Vishnu Vardhan Raju
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -60,14 +106,4 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
