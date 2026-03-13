@@ -303,22 +303,72 @@ const Landing = () => {
           scroll-margin-top: 120px;
         }
 
-        @media (max-width: 768px) {
-          .landing-header {
-            flex-direction: column;
-            gap: 10px;
-            padding: 15px 20px;
-          }
-          .hero-content h1 { font-size: 36px; white-space: nowrap; overflow-wrap: normal; }
-          .hero-content p { font-size: 16px; }
-          .landing-stats {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 40px 20px;
-          }
-          .section-title { font-size: 28px; }
-          .landing-features { padding: 20px 20px 60px; }
-        }
-      `}</style>
+  /* ===== Mobile Responsive Fixes ===== */
+
+.mobile-break{
+  display:none;
+}
+@media (max-width:768px){
+
+.mobile-break{
+  display:block;
+}
+/* 1️⃣ Fix Header Layout */
+.landing-header{
+  padding:15px 20px;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Navigation alignment */
+.landing-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* 2️⃣ Adjust Hero Text Size */
+.hero-content h1{
+    font-size:34px;
+    line-height:1.2;
+    max-width:200px;
+    margin:auto;
+    text-align:center;
+}
+
+.hero-content p{
+  font-size:15px;
+}
+
+/* 3️⃣ Hide Floating Icons for Mobile */
+.floating-icons{
+  display:none;
+}
+
+/* 4️⃣ Improve Feature Cards Layout */
+.landing-features{
+  padding:20px;
+  grid-template-columns:1fr;
+}
+
+/* 5️⃣ Fix Stats Section Grid */
+.landing-stats{
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+/* 6️⃣ Improve Section Titles */
+.section-title{
+  font-size:28px;
+}
+
+}
+
+/* Prevent Horizontal Scroll */
+body{
+  overflow-x:hidden;
+}
+  </style>
 
       <div className="landing-root">
         <header ref={headerRef} className="landing-header">
@@ -343,7 +393,7 @@ const Landing = () => {
             <span>🌤</span>
           </div>
           <div className="hero-content">
-            <h1>Global Weather Intelligence</h1>
+            <h1>Global Weather <br className="mobile-break" />Intelligence</h1>
             <p>
               Explore real-time weather forecasts, interactive global maps,
               air quality insights, and powerful analytics.
