@@ -303,7 +303,7 @@ const Landing = () => {
           scroll-margin-top: 120px;
         }
 
-  /* ===== Mobile Responsive Fixes ===== */
+        /* ===== Mobile Responsive Fixes ===== */
 
 .mobile-break{
   display:none;
@@ -368,7 +368,10 @@ const Landing = () => {
 body{
   overflow-x:hidden;
 }
-  </style>
+        
+
+        
+      `}</style>
 
       <div className="landing-root">
         <header ref={headerRef} className="landing-header">
@@ -393,7 +396,7 @@ body{
             <span>🌤</span>
           </div>
           <div className="hero-content">
-            <h1>Global Weather <br className="mobile-break" />Intelligence</h1>
+            <h1>Global <br className="mobile-break" />Weather <br className="mobile-break" />Intelligence</h1>
             <p>
               Explore real-time weather forecasts, interactive global maps,
               air quality insights, and powerful analytics.
