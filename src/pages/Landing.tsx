@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
   const navigate = useNavigate();
   const headerRef = useRef<HTMLElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -303,6 +304,34 @@ const Landing = () => {
           scroll-margin-top: 120px;
         }
 
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:white;
+  border-radius:3px;
+  transition:0.3s;
+}
+
+.hamburger.open span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.open span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.open span:nth-child(3){
+  transform:rotate(-45deg) translate(5px,-5px);
+}
         /* ===== Mobile Responsive Fixes ===== */
 
 .mobile-break{
@@ -316,15 +345,34 @@ const Landing = () => {
 /* 1️⃣ Fix Header Layout */
 .landing-header{
   padding:15px 20px;
-  flex-direction:column;
-  gap:10px;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
 }
 
 /* Navigation alignment */
-.landing-nav{
+.hamburger{
   display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+}
+
+.landing-nav{
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.9);
+  text-align:center;
+}
+
+.landing-nav.open{
+  display:flex;
+}
+
+.landing-nav a{
+  padding:12px 0;
+  margin:0;
 }
 
 /* 2️⃣ Adjust Hero Text Size */
@@ -374,15 +422,25 @@ body{
       `}</style>
 
       <div className="landing-root">
-        <header ref={headerRef} className="landing-header">
-          <div className="landing-logo">🌤 Global Sky</div>
-          <nav className="landing-nav">
-            <a href="#hero">Home</a>
-            <a href="#features">Features</a>
-            <a href="#stats">Stats</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </header>
+       <header ref={headerRef} className="landing-header">
+  <div className="landing-logo">🌤 Global Sky</div>
+
+  <button
+    className={`hamburger ${menuOpen ? "open" : ""}`}
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav className={`landing-nav ${menuOpen ? "open" : ""}`}>
+    <a href="#hero" onClick={()=>setMenuOpen(false)}>Home</a>
+    <a href="#features" onClick={()=>setMenuOpen(false)}>Features</a>
+    <a href="#stats" onClick={()=>setMenuOpen(false)}>Stats</a>
+    <a href="#contact" onClick={()=>setMenuOpen(false)}>Contact</a>
+  </nav>
+</header>
 
         <section className="landing-hero" id="hero">
           {/* background video from public/intro.mp4 */}
